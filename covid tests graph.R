@@ -62,7 +62,6 @@ hosp_rates <- hosp %>%
 
 
 tests <- covid_data %>% 
-  select(-X1, -X2) %>% 
   mutate(across(-Date, replace_na, 0)) %>% 
   filter(tot_tests !=0) %>% 
   mutate(prop_pos = new_cases/tot_tests,
